@@ -1,19 +1,176 @@
+/* General Body */
 body {
   font-family: "Segoe UI", sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  color: #333;
 }
+
+/* Hero Section */
 .hero-section {
-  background-color: #f8f9fa;
-  padding: 60px 20px;
+  background-color: #fff0f5; /* soft pinkish background */
+  padding: 80px 20px;
   text-align: center;
 }
+
 .hero-img {
   width: 180px;
   height: 180px;
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 20px;
+  border: 4px solid #b76e79; /* subtle rosegold border */
 }
+
+/* Section Headings */
+h2 {
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #b76e79; /* rosegold heading */
+}
+
+/* Tech Tags */
+.badge.bg-rosegold {
+  background-color: #b76e79;
+  color: #fff;
+  margin-right: 5px;
+  font-size: 0.8rem;
+}
+
+/* Project Cards */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #f2dede; /* light rosegold border */
+  border-radius: 10px;
+  background-color: #fffafc;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s forwards;
+  animation-delay: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(183, 110, 121, 0.3); /* rosegold shadow */
+}
+
+.card-body {
+  padding: 20px;
+}
+
 .card-img-top {
   height: 200px;
   object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Gradient Overlay on Card Images */
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(183, 110, 121, 0.2),
+    rgba(255, 228, 225, 0.2)
+  );
+  pointer-events: none;
+  transition: background 0.3s ease;
+}
+
+.card:hover::after {
+  background: linear-gradient(
+    to bottom,
+    rgba(183, 110, 121, 0.35),
+    rgba(255, 228, 225, 0.35)
+  );
+}
+
+/* Buttons inside cards */
+.card .btn {
+  margin-top: 10px;
+  width: 48%;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #b76e79; /* rosegold */
+  border-color: #b76e79;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #a55a65;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: #ffe4e1; /* soft pink */
+  border-color: #b76e79;
+  color: #b76e79;
+}
+
+.btn-secondary:hover {
+  background-color: #f8d1d0;
+  color: #a55a65;
+}
+
+/* Hover effect on card titles */
+.card-title:hover {
+  color: #a55a65; /* darker rosegold */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* Layout for buttons */
+.d-flex.justify-content-between {
+  gap: 4%;
+}
+
+/* Projects Section */
+section.py-5 {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* Footer */
+footer {
+  font-size: 0.9rem;
+  background-color: #b76e79; /* rosegold footer */
+  color: #fff;
+}
+
+/* Fade-in Animation */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .card .btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .d-flex.justify-content-between {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
